@@ -5,6 +5,12 @@ import java.awt.Graphics;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+// remember to uncomment the codes below
+// They are used to set color and font
+/*
+	import java.awt.Color;
+	import java.awt.Font;
+*/
 public class MyFrame extends Frame {
 	public void launchFrame() {
 		setSize(750, 750);
@@ -18,19 +24,21 @@ public class MyFrame extends Frame {
 		});
 	}
 
-	// paint method let you paint something on the window
 	public void paint(Graphics g) {
-		// g.setFont(new Font("Microsoft YaHei", Font.BOLD, 50));
+		// use these code as an example
 
-		// g.setColor(Color.blue);
-		// g.setColor(Color.green);
-		// g.setColor(Color.black);
-		// g.setColor(Color.red);
+		/*
+		g.setFont(new Font("Microsoft YaHei", Font.BOLD, 50));
+		g.setColor(Color.blue);
+		g.setColor(Color.green);
+		g.setColor(Color.black);
+		g.setColor(Color.red);
+		*/
 
-		// g.drawString(str, x, y);
-
+		// you wrote this yesterday
 		g.drawLine(0, 0, 750, 750);
 		g.fillRect(275, 275, 100, 100);
 		g.drawOval(50, 50, 150, 150);
+		g.drawString("Hello", 500, 500);
 	}
 }

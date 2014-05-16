@@ -19,8 +19,22 @@ public class MyFrame extends Frame {
 	}
 
 	public void paint(Graphics g) {
+		// we cannot draw a line directly
+		// but we can draw many small circle instead
+		// this for loop draw a small circle every time
+
+		// x is the independent variable
+		// x increases from -30 to 30 by 0.01
 		for (double x = -30; x < 30; x += .01) {
-			double y = Math.sin(x);
+			// write your function here
+			// Hint : sin is in Math class
+			double y = 1;
+
+			// (x * 20 + 375) is used to zoom & correct the x-coordinate
+			// (-y * 50 + 375) is used to zoom & correct the y-coordinate
+			// 375 is a half of the window
+			// (int) is used to convert them to integer
+			// the last two 5 is the radius of the circle (or dot)
 			g.fillOval((int) (x * 20 + 375), (int) (-y * 50 + 375), 5, 5);
 		}
 	}

@@ -20,14 +20,16 @@ public class MyFrame extends Frame {
 
 	// paint method let you paint something on the window
 	public void paint(Graphics g) {
-		// g.drawLine(x1, y1, x2, y2);
+		// use these code as an example
 
-		// g.drawOval(x, y, width, height);
-		// g.drawRect(x, y, width, height);
+		/*		g.drawLine(x1, y1, x2, y2);
 
-		// g.fillOval(x, y, width, height);
-		// g.fillRect(x, y, width, height);
+				g.drawOval(x, y, width, height);
+				g.drawRect(x, y, width, height);
 
-		// g.drawString(string, x, y);
+				g.fillOval(x, y, width, height);
+				g.fillRect(x, y, width, height);
+
+				g.drawString(string, x, y);*/
 	}
 }
