@@ -24,10 +24,10 @@ public class MyFrame extends Frame {
 			public void keyPressed(KeyEvent e) {
 				switch (e.getKeyCode()) {
 				case KeyEvent.VK_LEFT:
-					a += 0.025;
+					a -= 0.025;
 					break;
 				case KeyEvent.VK_RIGHT:
-					a -= 0.025;
+					a += 0.025;
 					break;
 				}
 				repaint();
