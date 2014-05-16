@@ -19,10 +19,9 @@ public class MyFrame extends Frame {
 	}
 
 	public void paint(Graphics g) {
-		for (double t = -30; t < 30; t += .01) {
-			double x = t * 10;
-			double y = t * t;
-			g.fillOval((int) x + 375, (int) -y + 700, 5, 5);
+		for (double x = -30; x < 30; x += .01) {
+			double y = Math.sin(x);
+			g.fillOval((int) (x * 20 + 375), (int) (-y * 50 + 375), 5, 5);
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package Day3;
+package Day5;
 
 import java.awt.Frame;
 import java.awt.Graphics;
@@ -18,19 +18,11 @@ public class MyFrame extends Frame {
 		});
 	}
 
-	// paint method let you paint something on the window
 	public void paint(Graphics g) {
-		// g.setFont(new Font("Microsoft YaHei", Font.BOLD, 50));
-
-		// g.setColor(Color.blue);
-		// g.setColor(Color.green);
-		// g.setColor(Color.black);
-		// g.setColor(Color.red);
-
-		// g.drawString(str, x, y);
-
-		g.drawLine(0, 0, 750, 750);
-		g.fillRect(275, 275, 100, 100);
-		g.drawOval(50, 50, 150, 150);
+		for (double t = -30; t < 30; t += .01) {
+			double x = t * 10;
+			double y = t * t;
+			g.fillOval((int) x + 375, (int) -y + 700, 5, 5);
+		}
 	}
 }
