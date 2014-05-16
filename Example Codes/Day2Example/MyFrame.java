@@ -1,5 +1,6 @@
 package Day2Example;
 
+import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.event.WindowAdapter;
@@ -19,7 +20,7 @@ public class MyFrame extends Frame {
 	}
 
 	public void paint(Graphics g) {
-		// g.setFont(new Font("Microsoft YaHei", Font.BOLD, 50));
+		g.setFont(new Font("Microsoft YaHei", Font.BOLD, 50));
 
 		// g.setColor(Color.blue);
 		// g.setColor(Color.green);
