@@ -25,6 +25,7 @@ public class MyFrame extends Frame {
 		// g.setColor(Color.blue);
 		// g.setColor(Color.green);
 		// g.setColor(Color.black);
+		// g.setColor(Color.red);
 
 		// g.drawLine(x1, y1, x2, y2);
 		// g.drawString(str, x, y);
