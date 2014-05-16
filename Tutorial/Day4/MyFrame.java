@@ -24,18 +24,18 @@ public class MyFrame extends Frame {
 		// this for loop draw a small circle every time
 
 		// x is the independent variable
-		// x increases from -30 to 30 by 0.01
-		for (double x = -30; x < 30; x += .01) {
+		// write the range of x blow
+		for (double x = 0; x < 0; x += .001) {
 			// write your function here
-			// Hint : sin is in Math class
+			// Hint : Math.sin()
 			double y = 1;
 
-			// (x * 20 + 375) is used to zoom & correct the x-coordinate
-			// (-y * 50 + 375) is used to zoom & correct the y-coordinate
+			// (x * 20 + 375) is used to scale & correct the x-coordinate
+			// (-y * 20 + 375) is used to scale & correct the y-coordinate
 			// 375 is a half of the window
 			// (int) is used to convert them to integer
 			// the last two 5 is the radius of the circle (or dot)
-			g.fillOval((int) (x * 20 + 375), (int) (-y * 50 + 375), 5, 5);
+			g.fillOval((int) (x * 20 + 375), (int) (-y * 20 + 375), 5, 5);
 		}
 	}
 }

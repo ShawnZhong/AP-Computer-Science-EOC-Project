@@ -20,9 +20,9 @@ public class MyFrame extends Frame {
 
 	public void paint(Graphics g) {
 		for (double t = -30; t < 30; t += .01) {
-			double x = t * 10;
+			double x = t;
 			double y = t * t;
-			g.fillOval((int) x + 375, (int) -y + 700, 5, 5);
+			g.fillOval((int) (x * 20) + 375, (int) (-y * 20) + 375, 5, 5);
 		}
 	}
 }

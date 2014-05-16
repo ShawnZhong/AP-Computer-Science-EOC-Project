@@ -1,4 +1,4 @@
-package Day4Example;
+package Day6;
 
 import java.awt.Frame;
 import java.awt.Graphics;
@@ -19,9 +19,15 @@ public class MyFrame extends Frame {
 	}
 
 	public void paint(Graphics g) {
-		for (double x = -30; x < 30; x += .01) {
-			double y = Math.sin(x);
-			g.fillOval((int) (x * 20 + 375), (int) (-y * 20 + 375), 5, 5);
+		// theta is the independent variable
+		// write the range of theta below
+		// Hint : Math.PI
+		for (double theta = 0; theta < 0; theta += .001) {
+			// write your parametric equation below
+			// Hint : Math.sin() , Math.cos()
+			double x = 1;
+			double y = 1;
+			g.fillOval((int) x + 375, (int) -y + 375, 5, 5);
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package Day4Example;
+package Day6Example;
 
 import java.awt.Frame;
 import java.awt.Graphics;
@@ -19,9 +19,10 @@ public class MyFrame extends Frame {
 	}
 
 	public void paint(Graphics g) {
-		for (double x = -30; x < 30; x += .01) {
-			double y = Math.sin(x);
-			g.fillOval((int) (x * 20 + 375), (int) (-y * 20 + 375), 5, 5);
+		for (double theta = 0; theta < 2 * Math.PI; theta += .001) {
+			double x = 300 * Math.sin(5 * theta);
+			double y = 300 * Math.cos(6 * theta);
+			g.fillOval((int) x + 375, (int) -y + 375, 5, 5);
 		}
 	}
 }

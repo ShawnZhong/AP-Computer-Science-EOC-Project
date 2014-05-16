@@ -20,15 +20,15 @@ public class MyFrame extends Frame {
 
 	public void paint(Graphics g) {
 		// t is the independent variable
-		// t increases from -30 to 30 by 0.01
-		for (double t = -30; t < 30; t += .01) {
+		// write the range of t blow
+		for (double t = 0; t < 0; t += .001) {
 			// write your parametric equation here
 			double x = 1;
 			double y = 1;
-			// (x + 375) is uesd to correct the x-coordinate
-			// (-y + 700)is uesd to correct the y-coordinate
+			// (x * 20 + 375) is used to scale & correct the x-coordinate
+			// (-y * 20 + 375) is used to scale & correct the y-coordinate
 			// (int) is used to convert them to integer
-			g.fillOval((int) (x + 375), (int) (-y + 700), 5, 5);
+			g.fillOval((int) (x * 20 + 375), (int) (-y * 20 + 375), 5, 5);
 		}
 	}
 }
