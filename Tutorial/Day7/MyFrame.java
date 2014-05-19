@@ -9,7 +9,7 @@ import java.awt.event.WindowEvent;
 
 public class MyFrame extends Frame {
 
-	// we usd a varible a instead of fixed value
+	// we use a variable n instead of fixed value
 	double n = 5;
 
 	public void launchFrame() {
@@ -46,7 +46,9 @@ public class MyFrame extends Frame {
 	}
 
 	public void paint(Graphics g) {
+		// that's what you wrote yesterday
 		for (double theta = 0; theta < 2 * Math.PI; theta += .001) {
+			// we use a variable n this time instead of fixed value
 			double x = 300 * Math.sin(n * theta);
 			double y = 300 * Math.cos((n + 1) * theta);
 			g.fillOval((int) x + 375, (int) -y + 375, 7, 7);
