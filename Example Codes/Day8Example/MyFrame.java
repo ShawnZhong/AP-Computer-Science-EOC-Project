@@ -1,5 +1,6 @@
-package Day7Example;
+package Day8Example;
 
+import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.event.KeyAdapter;
@@ -37,5 +38,9 @@ public class MyFrame extends Frame {
 			double y = 300 * Math.cos((a + 1) * theta);
 			g.fillOval((int) x + 375, (int) -y + 375, 7, 7);
 		}
+
+		g.setFont(new Font("Microsoft YaHei", Font.BOLD, 20));
+		g.drawString("a = " + a, 75, 60);
+
 	}
 }

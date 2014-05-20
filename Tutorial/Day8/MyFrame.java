@@ -1,4 +1,4 @@
-package Day7Example;
+package Day8;
 
 import java.awt.Frame;
 import java.awt.Graphics;
@@ -37,5 +37,8 @@ public class MyFrame extends Frame {
 			double y = 300 * Math.cos((a + 1) * theta);
 			g.fillOval((int) x + 375, (int) -y + 375, 7, 7);
 		}
+
+		// write your code here, use Day 3 as an example
+
 	}
 }

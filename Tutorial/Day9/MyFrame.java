@@ -1,5 +1,7 @@
-package Day7Example;
+package Day9;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.event.KeyAdapter;
@@ -9,6 +11,11 @@ import java.awt.event.WindowEvent;
 
 public class MyFrame extends Frame {
 	double a = 5;
+
+	public static void main(String[] args) {
+		MyFrame f = new MyFrame();
+		f.launchFrame();
+	}
 
 	public void launchFrame() {
 		setSize(750, 750);
@@ -32,10 +39,18 @@ public class MyFrame extends Frame {
 	}
 
 	public void paint(Graphics g) {
+		g.fillRect(0, 0, 750, 750);
+		g.setColor(Color.red);
+
 		for (double theta = 0; theta < 2 * Math.PI; theta += .001) {
 			double x = 300 * Math.sin(a * theta);
 			double y = 300 * Math.cos((a + 1) * theta);
 			g.fillOval((int) x + 375, (int) -y + 375, 7, 7);
 		}
+
+		g.setColor(Color.white);
+		g.setFont(new Font("Microsoft YaHei", Font.BOLD, 20));
+		g.drawString("a = " + a, 75, 60);
+
 	}
 }
