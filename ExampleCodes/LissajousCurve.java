@@ -13,7 +13,7 @@ import java.text.Format;
 public class LissajousCurve extends Frame {
 	Format format = new DecimalFormat("0.000");
 	Font font1 = new Font("Microsoft YaHei", Font.BOLD, 20);
-	Font font2 = new Font("Microsoft YaHei", Font.BOLD, 10);
+	Font font2 = new Font("Microsoft YaHei", Font.BOLD, 12);
 	Image image = null;
 
 	double d = 1;
