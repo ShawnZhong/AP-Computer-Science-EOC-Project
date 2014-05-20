@@ -4,7 +4,7 @@ This is for EOC project of AP Computer Science
 
 
 Day 1
-  Display window
+	Display window
 Day 2
 	Draw basic figures
 Day 3
@@ -20,6 +20,6 @@ Day 7
 Day 8
 	Print information on the window
 Day 9
-  Beautify your window	
+	Beautify your window	
 Day 10
 	Share your project
