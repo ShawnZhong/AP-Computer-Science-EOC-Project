@@ -16,7 +16,7 @@ public class LissajousCurve extends Frame {
 	Format f = new DecimalFormat("0.000");
 	Image image = null;
 
-	double difference = 1;
+	double d = 1;
 	double a = 1;
 	double delta = 0.025;
 	boolean auto;
@@ -38,7 +38,7 @@ public class LissajousCurve extends Frame {
 		g.fillRect(0, 0, 750, 750);
 		g.setColor(Color.red);
 		for (double i = 0; i <= 2 * Math.PI; i += 1 / 1000.0)
-			g.fillOval((int) (300 * Math.sin(a * i)) + 375, (int) (300 * Math.cos((a + difference) * i)) + 375, 7, 7);
+			g.fillOval((int) (300 * Math.sin(a * i)) + 375, (int) (300 * Math.cos((a + d) * i)) + 375, 7, 7);
 
 		if (auto) {
 			a += delta;
@@ -48,7 +48,18 @@ public class LissajousCurve extends Frame {
 
 		g.setColor(Color.white);
 		g.setFont(new Font("Microsoft YaHei", Font.BOLD, 20));
-		g.drawString("a = " + f.format(a) + "      b = " + f.format(a + difference) + "      b - a = " + f.format(difference), 75, 60);
+		g.drawString("a = " + f.format(a) + "      b = " + f.format(a + d) + "      b - a = " + f.format(d), 75, 60);
+
+		g.setFont(new Font("Microsoft YaHei", Font.BOLD, 10));
+		g.drawString("Up :       d+=.025", 10, 590);
+		g.drawString("Down :    d-=.025", 10, 605);
+		g.drawString("Left :      a-=.025", 10, 620);
+		g.drawString("Right :    a+=.025", 10, 635);
+		g.drawString("W :         d++", 10, 665);
+		g.drawString("S :          d--", 10, 680);
+		g.drawString("A :          a--", 10, 695);
+		g.drawString("D :          a++", 10, 710);
+		g.drawString("Space :     auto run", 10, 740);
 	}
 
 	public void update(Graphics g) {
@@ -70,37 +81,39 @@ public class LissajousCurve extends Frame {
 			}
 		}
 	};
+
 	WindowAdapter windowClosing = new WindowAdapter() {
 		public void windowClosing(WindowEvent e) {
 			System.exit(0);
 		}
 	};
+
 	KeyAdapter keyListener = new KeyAdapter() {
 		public void keyPressed(KeyEvent e) {
 			switch (e.getKeyCode()) {
 			case KeyEvent.VK_LEFT:
 				if (a > -10)
-					a -= 0.025;
+					a -= delta;
 				break;
 			case KeyEvent.VK_UP:
-				if (difference < 10)
-					difference += 0.025;
+				if (d < 10)
+					d += delta;
 				break;
 			case KeyEvent.VK_RIGHT:
 				if (a < 10)
-					a += 0.025;
+					a += delta;
 				break;
 			case KeyEvent.VK_DOWN:
-				if (difference > -10)
-					difference -= 0.025;
+				if (d > -10)
+					d -= delta;
 				break;
 			case KeyEvent.VK_W:
-				if (difference < 10)
-					difference = (int) (difference + 1);
+				if (d < 10)
+					d = (int) (d + 1);
 				break;
 			case KeyEvent.VK_S:
-				if (difference > -10)
-					difference = (int) (difference - 1);
+				if (d > -10)
+					d = (int) (d - 1);
 				break;
 			case KeyEvent.VK_A:
 				if (a > -10)
@@ -115,5 +128,4 @@ public class LissajousCurve extends Frame {
 			}
 		}
 	};
-
 }
