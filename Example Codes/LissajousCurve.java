@@ -1,5 +1,3 @@
-package curve;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
@@ -13,7 +11,9 @@ import java.text.DecimalFormat;
 import java.text.Format;
 
 public class LissajousCurve extends Frame {
-	Format f = new DecimalFormat("0.000");
+	Format format = new DecimalFormat("0.000");
+	Font font1 = new Font("Microsoft YaHei", Font.BOLD, 20);
+	Font font2 = new Font("Microsoft YaHei", Font.BOLD, 10);
 	Image image = null;
 
 	double d = 1;
@@ -47,10 +47,10 @@ public class LissajousCurve extends Frame {
 		}
 
 		g.setColor(Color.white);
-		g.setFont(new Font("Microsoft YaHei", Font.BOLD, 20));
-		g.drawString("a = " + f.format(a) + "      b = " + f.format(a + d) + "      b - a = " + f.format(d), 75, 60);
+		g.setFont(font1);
+		g.drawString("a = " + format.format(a) + "      b = " + format.format(a + d) + "      b - a = " + format.format(d), 75, 60);
 
-		g.setFont(new Font("Microsoft YaHei", Font.BOLD, 10));
+		g.setFont(font2);
 		g.drawString("Up :       d+=.025", 10, 590);
 		g.drawString("Down :    d-=.025", 10, 605);
 		g.drawString("Left :      a-=.025", 10, 620);
