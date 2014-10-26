@@ -20,6 +20,12 @@ public class LissajousCurve extends Frame {
 	double a = 1;
 	double delta = 0.025;
 	boolean auto;
+	int cr = 0;
+	int cg = 254;
+	int cb = 128;
+	double changer = 1;
+	double changeg = 1.1;
+	double changeb = 1.2;
 
 	public static void main(String[] args) {
 		new LissajousCurve().launchFrame();
@@ -36,9 +42,25 @@ public class LissajousCurve extends Frame {
 
 	public void paint(Graphics g) {
 		g.fillRect(0, 0, 750, 750);
-		g.setColor(Color.red);
-		for (double i = 0; i <= 2 * Math.PI; i += 1 / 1000.0)
-			g.fillOval((int) (300 * Math.sin(a * i)) + 375, (int) (300 * Math.cos((a + d) * i)) + 375, 7, 7);
+		cr += changer;
+		cg += changeg;
+		cb += changeb;
+		if (cr < 128 || cr > 254) {
+			changer = -changer;
+		}
+		if (cg < 128 || cg > 254) {
+			changeg = -changeg;
+		}
+		if (cb < 128 || cb > 254) {
+			changeb = -changeb;
+		}
+		Color color = new Color(cr, cg, cb);
+
+		g.setColor(color);
+		for (double i = 0; i <= 2 * Math.PI; i += 1 / 1000.0) {
+			g.fillOval((int) (300 * Math.sin(a * i)) + 375,
+					(int) (300 * Math.cos((a + d) * i)) + 375, 7, 7);
+		}
 
 		if (auto) {
 			a += delta;
@@ -48,7 +70,9 @@ public class LissajousCurve extends Frame {
 
 		g.setColor(Color.white);
 		g.setFont(font1);
-		g.drawString("a = " + format.format(a) + "      b = " + format.format(a + d) + "      b - a = " + format.format(d), 75, 60);
+		g.drawString(
+				"a = " + format.format(a) + "      b = " + format.format(a + d)
+						+ "      b - a = " + format.format(d), 75, 60);
 
 		g.setFont(font2);
 		g.drawString("Up :       d+=.025", 10, 590);
